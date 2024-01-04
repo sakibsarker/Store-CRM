@@ -174,35 +174,46 @@ const ProductScreen = () => {
               </Card>
             </Col>
           </Row>
+
           <Row>
             <Col md={5}>
               <div
                 style={{
-                  height: "70%",
+                  height: "100%",
                   width: "100%", // Since md={6} means half the width
                   backgroundColor: "#F5F1EC",
                   borderRadius: "30px",
-                  textAlign:'start',
-                  padding:'50px',
-                  paddingTop:'35%'
+                  textAlign: "start",
+                  padding: "50px",
+                  paddingTop: "35%",
                 }}
               >
-                <h2 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebanner}</h2>
-                <p style={{color:'#3C4043',fontWeight:'400'}}>{products.desbanner}</p>
+                <Row md={12}>
+                  <h2 style={{ color: "#3C4043", fontSize: "35px" }}>
+                    {products.titlebanner}
+                  </h2>
+                  <p style={{ color: "#3C4043", fontWeight: "400" }}>
+                    {products.desbanner}
+                  </p>
+                </Row>
               </div>
             </Col>
+
+            {/* Second Column */}
             <Col md={7}>
-              <Image
-                style={{
-                  borderRadius: "30px",
-                  height: "70%",
-                  width: "100%",
-                  objectFit: "cover",
-                }}
-                src={`http://localhost:5000${products.bannerimg}`}
-                alt={products.bannerimg}
-                fluid
-              />
+              <Row md={12}>
+                <Image
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                    borderRadius: "30px",
+                  }}
+                  src={`http://localhost:5000${products.bannerimg}`}
+                  alt={products.bannerimgthree}
+                  fluid
+                />
+              </Row>
             </Col>
           </Row>
 
@@ -216,14 +227,25 @@ const ProductScreen = () => {
                   backgroundColor: "#F5F1EC", // Gray background color
                   borderRadius: "30px",
                   flexDirection: "column",
-                  textAlign:'start',
-                  paddingBottom:'50px',
-                  paddingTop:'50px'
+                  textAlign: "start",
+                  paddingBottom: "50px",
+                  paddingTop: "50px",
                 }}
               >
-                <Row md={12} style={{paddingLeft:'40px',paddingRight:'40px',paddingBottom:'40px'}}>
-                  <h2 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebannertwo}</h2>
-                  <p style={{color:'#3C4043',fontWeight:'400'}}>{products.desbannertwo}</p>
+                <Row
+                  md={12}
+                  style={{
+                    paddingLeft: "40px",
+                    paddingRight: "40px",
+                    paddingBottom: "40px",
+                  }}
+                >
+                  <h2 style={{ color: "#3C4043", fontSize: "35px" }}>
+                    {products.titlebannertwo}
+                  </h2>
+                  <p style={{ color: "#3C4043", fontWeight: "400" }}>
+                    {products.desbannertwo}
+                  </p>
                 </Row>
 
                 <Row md={12}>
@@ -242,7 +264,7 @@ const ProductScreen = () => {
             </Col>
 
             {/* Second Column */}
-            <Col md={5} >
+            <Col md={5}>
               <div
                 style={{
                   height: "100%",
@@ -250,14 +272,30 @@ const ProductScreen = () => {
                   backgroundColor: "#F5F1EC", // Gray background color
                   borderRadius: "30px",
                   flexDirection: "column",
-                  textAlign:'start',
-                  paddingTop:'50px'
-
+                  textAlign: "start",
+                  paddingTop: "50px",
                 }}
               >
-                <Row md={12} style={{paddingLeft:'40px',paddingRight:'40px',paddingBottom:'40px'}}>
-                  <h1 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebannerthree}</h1>
-                  <h6 style={{color:'#3C4043',fontWeight:'400',lineHeight:'1.7'}}>{products.desbannerthree}</h6>
+                <Row
+                  md={12}
+                  style={{
+                    paddingLeft: "40px",
+                    paddingRight: "40px",
+                    paddingBottom: "40px",
+                  }}
+                >
+                  <h1 style={{ color: "#3C4043", fontSize: "35px" }}>
+                    {products.titlebannerthree}
+                  </h1>
+                  <h6
+                    style={{
+                      color: "#3C4043",
+                      fontWeight: "400",
+                      lineHeight: "1.7",
+                    }}
+                  >
+                    {products.desbannerthree}
+                  </h6>
                 </Row>
                 <Row md={12}>
                   <Image
@@ -265,9 +303,8 @@ const ProductScreen = () => {
                       height: "300px",
                       width: "100%",
                       objectFit: "cover",
-                      borderBottomLeftRadius:'30px',
-                      borderBottomRightRadius:'30px'
-
+                      borderBottomLeftRadius: "30px",
+                      borderBottomRightRadius: "30px",
                     }}
                     src={`http://localhost:5000${products.bannerimgthree}`}
                     alt={products.bannerimgthree}
@@ -282,14 +319,94 @@ const ProductScreen = () => {
             <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h6>{products.materialtitle}</h6>
-                  <p>{products.materialdes}</p>
+                  <Row>
+                    <Col md={5}>
+                      <h1 style={{ color: "#3C4043", textAlign: "center" }}>
+                        Technical<br></br>specifications
+                      </h1>
+                    </Col>
+                    <Col md={6}>
+                      <h6 style={{ color: "#3C4043", fontSize: "20px" }}>
+                        {products.materialtitle}
+                      </h6>
+                      <p
+                        style={{
+                          color: "#3C4043",
+                          fontWeight: "400",
+                          lineHeight: "2",
+                        }}
+                      >
+                        {products.materialdes}
+                      </p>
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>{products.included}</p>
+                  <Row>
+                    <Col md={5}></Col>
+                    <Col md={6}>
+                      <h6 style={{ color: "#3C4043", fontSize: "20px" }}>
+                        {products.materialtitle}
+                      </h6>
+                      <p
+                        style={{
+                          color: "#3C4043",
+                          fontWeight: "400",
+                          lineHeight: "2",
+                        }}
+                      >
+                        {products.materialdes}
+                      </p>
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  <p>{products.compatible}</p>
+
+                <ListGroup.Item style={{ textAlign: "center" }}>
+                  <Row>
+                    <Col md={5}>
+                      {" "}
+                      <h1 style={{ color: "#3C4043" }}>What is included</h1>
+                    </Col>
+                    <Col
+                      md={6}
+                      style={{ alignItems: "center", display: "flex" }}
+                    >
+                      {" "}
+                      <p
+                        style={{
+                          color: "#3C4043",
+                          fontWeight: "400",
+                          lineHeight: "2",
+                        }}
+                      >
+                        {products.included}
+                      </p>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+
+                <ListGroup.Item style={{ textAlign: "center" }}>
+                  <Row>
+                    <Col md={5}>
+                      {" "}
+                      <h1 style={{ color: "#3C4043" }}>Compatible with</h1>
+                    </Col>
+                    <Col
+                      md={6}
+                      style={{ alignItems: "center", display: "flex" }}
+                    >
+                      {" "}
+                      <p
+                        style={{
+                          color: "#3C4043",
+                          fontWeight: "400",
+                          lineHeight: "2",
+                        }}
+                      >
+                        {products.compatible}
+                      </p>
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
