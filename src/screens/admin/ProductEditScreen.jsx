@@ -27,6 +27,8 @@ const ProductEditScreen = () => {
     const [titlebannerthree,setTitlebannerthree]=useState('');
     const [desbannerthree,setDesbannerthree]=useState('');
     const [bannerimgthree,setBannerimgthree]=useState('');
+    const [specifications,setSpecifications]=useState('');
+    const [detailspecifications,SetDetailspecifications]=useState('');
     const [materialtitle,setMaterialtitle]=useState('');
     const [materialdes,setMaterialdes]=useState('');
     const [included,setIncluded]=useState('');
@@ -60,6 +62,8 @@ const ProductEditScreen = () => {
            setTitlebannerthree(product.titlebannerthree);
            setDesbannerthree(product.desbannerthree);
            setBannerimgthree(product.bannerimgthree);
+           setSpecifications(product.specifications);
+           SetDetailspecifications(product.detailspecifications);
            setMaterialtitle(product.materialtitle);
            setMaterialdes(product.materialdes);
            setIncluded(product.included);
@@ -86,6 +90,8 @@ const ProductEditScreen = () => {
             titlebannerthree,
             desbannerthree,
             bannerimgthree,
+            specifications,
+            detailspecifications,
             materialtitle,
             materialdes,
             included,
@@ -280,6 +286,29 @@ const ProductEditScreen = () => {
                         onChange={(e)=>setBannerimgthree}
                         ></Form.Control>
                     </Form.Group>
+
+                    <Form.Group controlId='specifications'>
+                        <Form.Label>Specifications</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter specifications'
+                        value={specifications}
+                        onChange={(e)=>setSpecifications(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId='detailspecifications'>
+                        <Form.Label>Detailspecifications</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter detailspecifications'
+                        value={detailspecifications}
+                        onChange={(e)=>SetDetailspecifications(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
 
                     
                     <Form.Group controlId='materialtitle'>

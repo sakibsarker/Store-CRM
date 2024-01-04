@@ -333,7 +333,7 @@ const ProductScreen = () => {
                     </Col>
                     <Col md={6}>
                       <h6 style={{ color: "#3C4043", fontSize: "20px" }}>
-                        {products.materialtitle}
+                        {products.specifications}
                       </h6>
                       <p
                         style={{
@@ -342,7 +342,7 @@ const ProductScreen = () => {
                           lineHeight: "2",
                         }}
                       >
-                        {products.materialdes}
+                        {products.detailspecifications}
                       </p>
                     </Col>
                   </Row>
@@ -436,7 +436,7 @@ const ProductScreen = () => {
             <Row>Product</Row>
           </Row>
 
-          <Row style={{ marginTop: "100px", backgroundColor: "#F8F9FA",paddingBottom:'50px',paddingTop:'50px' }}>
+          <Row style={{ marginTop: "100px", backgroundColor: "#F8F9FA",paddingBottom:'50px',paddingTop:'50px',marginBottom:'50px' }}>
             <div style={{ textAlign: "center" }}>
               <img
                 src="/pinsvg.svg"
