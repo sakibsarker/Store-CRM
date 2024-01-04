@@ -161,6 +161,7 @@ const ProductScreen = () => {
 
                   <ListGroup.Item>
                     <Button
+                    style={{width:'100%'}}
                       className="btn-block"
                       type="button"
                       disabled={products.countInStock === 0}
@@ -209,7 +210,7 @@ const ProductScreen = () => {
           </Row>
 
           <Row>
-            <Col md={12}>
+            <Col md={6}>
               <Col md={12}>
                 <strong>{products.titlebannertwo}</strong>
               </Col>
@@ -219,16 +220,20 @@ const ProductScreen = () => {
               </Col>
               <Col md={12}>
                 <Image
+                 style={{
+                  borderRadius: "30px",
+                  height: "70%",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
                   src={`http://localhost:5000${products.bannerimgtwo}`}
                   alt={products.bannerimgtwo}
                   fluid
                 />
               </Col>
             </Col>
-          </Row>
 
-          <Row>
-            <Col md={12}>
+            <Col md={6}>
               <Col md={12}>
                 <strong>{products.titlebannerthree}</strong>
               </Col>
@@ -238,6 +243,12 @@ const ProductScreen = () => {
               </Col>
               <Col md={12}>
                 <Image
+                 style={{
+                  borderRadius: "30px",
+                  height: "70%",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
                   src={`http://localhost:5000${products.bannerimgthree}`}
                   alt={products.bannerimgthree}
                   fluid
@@ -245,22 +256,20 @@ const ProductScreen = () => {
               </Col>
             </Col>
           </Row>
-
           <Row>
-            <Col md={12}>
-              <strong>{products.materialtitle}</strong>
-            </Col>
-            <Col md={12}>
-              <strong>{products.materialdes}</strong>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col md={12}>
-              <strong>{products.included}</strong>
-            </Col>
-            <Col md={12}>
-              <strong>{products.compatible}</strong>
+          <Col md={12}>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <h3>{products.materialtitle}</h3>
+                  <h3>{products.materialdes}</h3>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <h3>{products.included}</h3>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <h3>{products.compatible}</h3>
+                </ListGroup.Item>
+                </ListGroup>
             </Col>
           </Row>
 
