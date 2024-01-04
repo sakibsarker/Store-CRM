@@ -86,6 +86,13 @@ const ProductScreen = () => {
           <Row>
             <Col md={5}>
               <Image
+              style={{
+                height: "80%",
+                width: "100%",
+                objectFit: "cover",
+                borderRadius: "30px",
+                
+              }}
                 src={`http://localhost:5000${products.image}`}
                 alt={products.name}
                 fluid
@@ -175,7 +182,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row style={{marginBottom:'50px'}}>
             <Col md={5}>
               <div
                 style={{
@@ -208,6 +215,7 @@ const ProductScreen = () => {
                     width: "100%",
                     objectFit: "cover",
                     borderRadius: "30px",
+                    
                   }}
                   src={`http://localhost:5000${products.bannerimg}`}
                   alt={products.bannerimgthree}
@@ -315,7 +323,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row style={{marginTop:'150px'}}>
             <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
