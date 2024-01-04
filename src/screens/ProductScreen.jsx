@@ -136,20 +136,30 @@ const ProductScreen = () => {
          
         </Row>
         <Row>
-          <Col md={6}>
-            <Col md={12}>
-            <strong>{products.titlebanner}</strong>
-           
-            <Col md={12}>
-            <strong>{products.desbanner}</strong>
-            </Col>
-            </Col>
-           
-          </Col>
-          <Col md={6}>
-          <Image src={`http://localhost:5000${products.bannerimg}`} alt={products.bannerimg} fluid/>
-          </Col>
-        </Row>
+  <Col md={5}>
+  <div
+      style={{
+        height: '70%',
+        width: '100%', // Since md={6} means half the width
+        backgroundColor: '#F5F1EC',
+        padding: '10px', // Add padding for some spacing
+        display: 'flex',
+        borderRadius:'30px',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <strong>{products.titlebanner}</strong>
+      <br />
+      <strong>{products.desbanner}</strong>
+    </div>
+  </Col>
+  <Col md={7}>
+    <Image style={{borderRadius:'30px',height:'70%',width:'100%',objectFit:'cover'}} src={`http://localhost:5000${products.bannerimg}`} alt={products.bannerimg} fluid />
+  </Col>
+</Row>
+
 
         <Row>
           <Col md={12}>
