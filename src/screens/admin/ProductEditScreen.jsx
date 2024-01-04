@@ -24,6 +24,9 @@ const ProductEditScreen = () => {
     const [titlebannertwo,setTitlebannertwo]=useState('');
     const [desbannertwo,setDesbannertwo]=useState('');
     const [bannerimgtwo,setBannerimgtwo]=useState('');
+    const [titlebannerthree,setTitlebannerthree]=useState('');
+    const [desbannerthree,setDesbannerthree]=useState('');
+    const [bannerimgthree,setBannerimgthree]=useState('');
     const [materialtitle,setMaterialtitle]=useState('');
     const [materialdes,setMaterialdes]=useState('');
     const [included,setIncluded]=useState('');
@@ -54,6 +57,9 @@ const ProductEditScreen = () => {
            setTitlebannertwo(product.titlebannertwo),
            setDesbannertwo(product.desbannertwo);
            setBannerimgtwo(product.bannerimgtwo);
+           setTitlebannerthree(product.titlebannerthree);
+           setDesbannerthree(product.desbannerthree);
+           setBannerimgthree(product.bannerimgthree);
            setMaterialtitle(product.materialtitle);
            setMaterialdes(product.materialdes);
            setIncluded(product.included);
@@ -77,6 +83,9 @@ const ProductEditScreen = () => {
             titlebannertwo,
             desbannertwo,
             bannerimgtwo,
+            titlebannerthree,
+            desbannerthree,
+            bannerimgthree,
             materialtitle,
             materialdes,
             included,
@@ -185,7 +194,6 @@ const ProductEditScreen = () => {
                         >
                         </Form.Control>
                     </Form.Group>
-
                     
                     <Form.Group controlId='desbanner'>
                         <Form.Label>Description Banner</Form.Label>
@@ -196,6 +204,16 @@ const ProductEditScreen = () => {
                         onChange={(e)=>setDesbanner(e.target.value)}
                         >
                         </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId='bannerimg'>
+                        <Form.Label>bannerimg</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter bannerimg url'
+                        value={bannerimg}
+                        onChange={(e)=>setBannerimg}
+                        ></Form.Control>
                     </Form.Group>
 
                     <Form.Group controlId='titlebannertwo'>
@@ -218,6 +236,49 @@ const ProductEditScreen = () => {
                         onChange={(e)=>setDesbannertwo(e.target.value)}
                         >
                         </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId='bannerimgtwo'>
+                        <Form.Label>bannerimgtwo</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter bannerimgtwo url'
+                        value={bannerimgtwo}
+                        onChange={(e)=>setBannerimgtwo}
+                        ></Form.Control>
+                    </Form.Group>
+
+
+                    <Form.Group controlId='titlebannerthree'>
+                        <Form.Label>Title Banner three</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter title banner three'
+                        value={titlebannerthree}
+                        onChange={(e)=>setTitlebannerthree(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId='desbannerthree'>
+                        <Form.Label>Description Banner three</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter description banner three'
+                        value={desbannerthree}
+                        onChange={(e)=>setDesbannerthree(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId='bannerimgthree'>
+                        <Form.Label>bannerimg three</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter bannerimg three url'
+                        value={bannerimgthree}
+                        onChange={(e)=>setBannerimgthree}
+                        ></Form.Control>
                     </Form.Group>
 
                     

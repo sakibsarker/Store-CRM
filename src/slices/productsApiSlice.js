@@ -42,6 +42,13 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    uploadBannerImage: builder.mutation({
+      query: (data) => ({
+        url: `${UPLOADS_URL}`,
+        method: "POST",
+        body: data,
+      }),
+    }),
     deleteProduct: builder.mutation({
       query: (productId) => ({
         url: `${PRODUCTS_URL}/${productId}`,
@@ -72,6 +79,7 @@ export const {
   useCreateProductMutation,
   useUpdateProductMutation,
   useUploadProductImageMutation,
+  useUploadBannerImageMutation,
   useDeleteProductMutation,
   useCreateReviewMutation,
   useGetTopProductQuery,
