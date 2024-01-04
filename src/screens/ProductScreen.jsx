@@ -86,13 +86,12 @@ const ProductScreen = () => {
           <Row>
             <Col md={5}>
               <Image
-              style={{
-                height: "80%",
-                width: "100%",
-                objectFit: "cover",
-                borderRadius: "30px",
-                
-              }}
+                style={{
+                  height: "80%",
+                  width: "100%",
+                  objectFit: "cover",
+                  borderRadius: "30px",
+                }}
                 src={`http://localhost:5000${products.image}`}
                 alt={products.name}
                 fluid
@@ -182,7 +181,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{marginBottom:'50px'}}>
+          <Row style={{ marginBottom: "50px" }}>
             <Col md={5}>
               <div
                 style={{
@@ -215,7 +214,6 @@ const ProductScreen = () => {
                     width: "100%",
                     objectFit: "cover",
                     borderRadius: "30px",
-                    
                   }}
                   src={`http://localhost:5000${products.bannerimg}`}
                   alt={products.bannerimgthree}
@@ -323,7 +321,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{marginTop:'150px'}}>
+          <Row style={{ marginTop: "150px" }}>
             <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -418,6 +416,58 @@ const ProductScreen = () => {
                 </ListGroup.Item>
               </ListGroup>
             </Col>
+          </Row>
+
+          <Row style={{ textAlign: "center", marginTop: "100px" }}>
+            <h1
+              style={{ color: "#3C4043", fontSize: "40px", fontWeight: "500" }}
+            >
+              Other useful accessories.
+            </h1>
+            <p
+              style={{
+                color: "#196CD5",
+                fontWeight: "500",
+                textDecoration: "underline",
+              }}
+            >
+              Browse all accessories {">"}
+            </p>
+            <Row>Product</Row>
+          </Row>
+
+          <Row style={{ marginTop: "100px", backgroundColor: "#F8F9FA",paddingBottom:'50px',paddingTop:'50px' }}>
+            <div style={{ textAlign: "center" }}>
+              <img
+                src="/pinsvg.svg"
+                alt="Your SVG Alt Text"
+                width="50"
+                height="50"
+              />
+              <h1
+                style={{
+                  color: "#3C4043",
+                  fontSize: "40px",
+                  fontWeight: "500",
+                }}
+              >
+                Don't miss anything.
+              </h1>
+              <p style={{ color: "#3C4043", fontWeight: "400" }}>
+                Keep me updated on devices, news, tips and offers from the
+                Google Store.
+              </p>
+              <Button
+                style={{
+                  width: "150px",
+                  background: "white",
+                  color: "#3C4043",
+                  borderColor: "#3C4043",
+                }}
+              >
+                Register
+              </Button>
+            </div>
           </Row>
 
           <Row className="review">
