@@ -182,11 +182,13 @@ const ProductScreen = () => {
                   width: "100%", // Since md={6} means half the width
                   backgroundColor: "#F5F1EC",
                   borderRadius: "30px",
-                  textAlign: "center",
+                  textAlign:'start',
+                  padding:'50px',
+                  paddingTop:'35%'
                 }}
               >
-                <h2>{products.titlebanner}</h2>
-                <h5>{products.desbanner}</h5>
+                <h2 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebanner}</h2>
+                <p style={{color:'#3C4043',fontWeight:'400'}}>{products.desbanner}</p>
               </div>
             </Col>
             <Col md={7}>
@@ -206,32 +208,28 @@ const ProductScreen = () => {
 
           <Row>
             {/* First Column */}
-            <Col md={6}>
+            <Col md={7}>
               <div
                 style={{
                   height: "100%",
                   width: "100%",
                   backgroundColor: "#F5F1EC", // Gray background color
-
                   borderRadius: "30px",
-
                   flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  textAlign:'start',
+                  paddingBottom:'50px',
+                  paddingTop:'50px'
                 }}
               >
-                <Row md={12}>
-                  <h1>{products.titlebannertwo}</h1>
-                </Row>
-
-                <Row md={12}>
-                  <h6>{products.desbannertwo}</h6>
+                <Row md={12} style={{paddingLeft:'40px',paddingRight:'40px',paddingBottom:'40px'}}>
+                  <h2 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebannertwo}</h2>
+                  <p style={{color:'#3C4043',fontWeight:'400'}}>{products.desbannertwo}</p>
                 </Row>
 
                 <Row md={12}>
                   <Image
                     style={{
-                      height: "150px",
+                      height: "300px",
                       width: "100%",
                       objectFit: "cover",
                     }}
@@ -244,33 +242,32 @@ const ProductScreen = () => {
             </Col>
 
             {/* Second Column */}
-            <Col md={6}>
+            <Col md={5} >
               <div
                 style={{
                   height: "100%",
                   width: "100%",
                   backgroundColor: "#F5F1EC", // Gray background color
                   borderRadius: "30px",
-
                   flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  textAlign:'start',
+                  paddingTop:'50px'
+
                 }}
               >
-                <Row md={12}>
-                  <h1>{products.titlebannerthree}</h1>
+                <Row md={12} style={{paddingLeft:'40px',paddingRight:'40px',paddingBottom:'40px'}}>
+                  <h1 style={{color:'#3C4043',fontSize:'35px'}}>{products.titlebannerthree}</h1>
+                  <h6 style={{color:'#3C4043',fontWeight:'400',lineHeight:'1.7'}}>{products.desbannerthree}</h6>
                 </Row>
-
-                <Row md={12}>
-                  <h6>{products.desbannerthree}</h6>
-                </Row>
-
                 <Row md={12}>
                   <Image
                     style={{
-                      height: "150px",
+                      height: "300px",
                       width: "100%",
                       objectFit: "cover",
+                      borderBottomLeftRadius:'30px',
+                      borderBottomRightRadius:'30px'
+
                     }}
                     src={`http://localhost:5000${products.bannerimgthree}`}
                     alt={products.bannerimgthree}
