@@ -161,7 +161,7 @@ const ProductScreen = () => {
 
                   <ListGroup.Item>
                     <Button
-                    style={{width:'100%'}}
+                      style={{ width: "100%" }}
                       className="btn-block"
                       type="button"
                       disabled={products.countInStock === 0}
@@ -189,9 +189,8 @@ const ProductScreen = () => {
                   alignItems: "center",
                 }}
               >
-                <strong>{products.titlebanner}</strong>
-                <br />
-                <strong>{products.desbanner}</strong>
+                <h2>{products.titlebanner}</h2>
+                <h5>{products.desbanner}</h5>
               </div>
             </Col>
             <Col md={7}>
@@ -210,66 +209,96 @@ const ProductScreen = () => {
           </Row>
 
           <Row>
+            {/* First Column */}
             <Col md={6}>
-              <Col md={12}>
-                <strong>{products.titlebannertwo}</strong>
-              </Col>
-
-              <Col md={12}>
-                <strong>{products.desbannertwo}</strong>
-              </Col>
-              <Col md={12}>
-                <Image
-                 style={{
-                  borderRadius: "30px",
+              <div
+                style={{
                   height: "70%",
                   width: "100%",
-                  objectFit: "cover",
+                  backgroundColor: "#F5F1EC", // Gray background color
+
+                  borderRadius: "30px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-                  src={`http://localhost:5000${products.bannerimgtwo}`}
-                  alt={products.bannerimgtwo}
-                  fluid
-                />
-              </Col>
+              >
+                <Col md={12}>
+                  <h1>{products.titlebannertwo}</h1>
+                </Col>
+
+                <Col md={12}>
+                  <h6>{products.desbannertwo}</h6>
+                </Col>
+
+                <Col md={12}>
+                  <Image
+                    style={{
+                      height: "50%",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={`http://localhost:5000${products.bannerimgtwo}`}
+                    alt={products.bannerimgtwo}
+                    fluid
+                  />
+                </Col>
+              </div>
             </Col>
 
+            {/* Second Column */}
             <Col md={6}>
-              <Col md={12}>
-                <strong>{products.titlebannerthree}</strong>
-              </Col>
-
-              <Col md={12}>
-                <strong>{products.desbannerthree}</strong>
-              </Col>
-              <Col md={12}>
-                <Image
-                 style={{
-                  borderRadius: "30px",
-                  height: "70%",
+              <div
+                style={{
+                  height: "100%",
                   width: "100%",
-                  objectFit: "cover",
+                  backgroundColor: "#F5F1EC", // Gray background color
+                  borderRadius: "30px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-                  src={`http://localhost:5000${products.bannerimgthree}`}
-                  alt={products.bannerimgthree}
-                  fluid
-                />
-              </Col>
+              >
+                <Col md={12}>
+                  <h1>{products.titlebannerthree}</h1>
+                </Col>
+
+                <Col md={12}>
+                  <h6>{products.desbannerthree}</h6>
+                </Col>
+
+                <Col md={12}>
+                  <Image
+                    style={{
+                      height: "50%",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={`http://localhost:5000${products.bannerimgthree}`}
+                    alt={products.bannerimgthree}
+                    fluid
+                  />
+                </Col>
+              </div>
             </Col>
           </Row>
+
           <Row>
-          <Col md={12}>
+            <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{products.materialtitle}</h3>
-                  <h3>{products.materialdes}</h3>
+                  <h6>{products.materialtitle}</h6>
+                  <p>{products.materialdes}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <h3>{products.included}</h3>
+                  <p>{products.included}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <h3>{products.compatible}</h3>
+                  <p>{products.compatible}</p>
                 </ListGroup.Item>
-                </ListGroup>
+              </ListGroup>
             </Col>
           </Row>
 
