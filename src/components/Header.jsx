@@ -33,7 +33,7 @@ const Header = () => {
     <header>
        
       <Navbar bg="dark" variant="dark" expand="sm" collapseOnSelect>
-        <Container>
+        <Container style={{marginRight:'60px',marginLeft:'60px'}}>
           <LinkContainer to='/'>
           <Navbar.Brand>Store CRM</Navbar.Brand>
           </LinkContainer>

@@ -16,10 +16,9 @@ const HomeScreen = () => {
 
   return (
     <>
-    {!keyword?(<ProductCarousel/>):(<Link to='/' className='btn btn-light'>Go Back</Link>)}
+   
     {isLoading?(<><Loader/></>):error?(<Message variant='danger'>{error?.data?.message||error.error}</Message>):(
     <>
-    
     <h1 style={{color:'black',textAlign:'center'}}>New Arrival</h1>
       <Row>
         {data.product.map((productt) => (
