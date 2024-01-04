@@ -21,7 +21,7 @@ const HomeScreen = () => {
           {/* Sidebar */}
           <Col md={3} className="d-none d-md-block">
             <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px' }}>
-              <h5>Categories</h5>
+              <h5>Product Type</h5>
               <ul style={{ listStyle: 'none', padding: '0' }}>
                 <li>
                   <Link to="/category1">Category 1</Link>
@@ -45,7 +45,7 @@ const HomeScreen = () => {
                 <h1 style={{ color: 'black', textAlign: 'center',fontWeight:'600',fontSize:'30px' }}>Welcome to <br></br> the Store CRM</h1>
                 <Row>
                   {data.product.map((product) => (
-                    <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
+                    <Col key={product._id} sm={12} md={6} lg={4} xl={4} className="mb-3">
                       <Product prduct={product} />
                     </Col>
                   ))}

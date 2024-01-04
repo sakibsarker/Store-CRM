@@ -14,15 +14,12 @@ const Product = ({prduct}) => {
                     }} src={`http://localhost:5000${prduct.image}`} variant="top"/>
         </Link>
         <Card.Body>
-            <Link to={`/product/${prduct._id}`}>
-                <Card.Title as="div" className='product-title'>
-                    <strong>{prduct.name}</strong>
+            <Link to={`/product/${prduct._id}`} style={{ textDecoration: 'none' }}>
+                <Card.Title as="h6" className='product-title'>
+                    {prduct.name}
                 </Card.Title>
             </Link>
-            {/* <Card.Text as="div">
-                <Rating value={prduct.rating} text={`${prduct.numReviews} reviews`}/>
-            </Card.Text> */}
-            <Card.Text as="h5">
+            <Card.Text as="h6">
                 ${prduct.price}
             </Card.Text>
            
@@ -32,3 +29,8 @@ const Product = ({prduct}) => {
 }
 
 export default Product
+
+
+  {/* <Card.Text as="div">
+                <Rating value={prduct.rating} text={`${prduct.numReviews} reviews`}/>
+            </Card.Text> */}
