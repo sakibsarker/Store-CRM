@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
@@ -10,8 +10,22 @@ import ProductCarousel from '../components/ProductCarousel';
 const HomeScreen = () => {
 
   const {pageNumber,keyword}=useParams();
+  const [selectedBrand, setSelectedBrand] = useState('');
   
-  const {data,isLoading,error}=useGetProductsQuery({keyword,pageNumber});
+  const {data,isLoading,error}=useGetProductsQuery({keyword,pageNumber,brand: selectedBrand });
+
+  const uniqueBrands = data?.product
+    ? Array.from(new Set(data.product.map((product) => product.brand)))
+    : [];
+
+  console.log(uniqueBrands)
+
+  const handleBrandFilter = (brand) => {
+    console.log('Selected Brand:', brand);
+    // Update state or dispatch an action to trigger a new API call with the selected brand
+    setSelectedBrand(brand);
+    
+  };
 
 
   return (
@@ -21,15 +35,13 @@ const HomeScreen = () => {
           {/* Sidebar */}
           <Col md={3} className="d-none d-md-block">
             <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px' }}>
-              <h5>Product Type</h5>
+              <h5>Brand Filter</h5>
               <ul style={{ listStyle: 'none', padding: '0' }}>
-                <li>
-                  <Link to="/category1">Category 1</Link>
-                </li>
-                <li>
-                  <Link to="/category2">Category 2</Link>
-                </li>
-                {/* Add more links as needed */}
+                {uniqueBrands.map((brand) => (
+                  <li key={brand}>
+                    <span onClick={() => handleBrandFilter(brand)}>{brand}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </Col>
