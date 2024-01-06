@@ -87,8 +87,8 @@ const ProductScreen = () => {
             <Col md={5}>
               <Image
                 style={{
-                  height: "80%",
-                  width: "100%",
+                  height: "700px",
+                  width: "700px",
                   objectFit: "cover",
                   borderRadius: "30px",
                 }}
@@ -181,7 +181,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ marginBottom: "50px",paddingLeft:'100px',marginRight:'100px' }}>
+          <Row style={{ marginTop:'50px',paddingLeft:'100px',marginRight:'100px' }}>
             <Col md={5}>
               <div
                 style={{
@@ -223,7 +223,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{paddingLeft:'100px',marginRight:'100px'}}>
+          <Row style={{paddingLeft:'100px',marginRight:'100px',marginTop:'50px'}}>
             {/* First Column */}
             <Col md={7}>
               <div
