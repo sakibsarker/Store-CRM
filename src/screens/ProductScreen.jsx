@@ -84,7 +84,7 @@ const ProductScreen = () => {
         <>
           <Meta title={products.name} />
           <Row>
-            <Col md={5}>
+            <Col md={7}>
               <Image
                 style={{
                   height: "700px",
@@ -104,6 +104,9 @@ const ProductScreen = () => {
                   <h3>{products.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
+                  <p>Description: {products.description}</p>
+                </ListGroup.Item>
+                <ListGroup.Item>
                   <Rating
                     value={products.rating}
                     text={`${products.numReviews} reviews`}
@@ -113,40 +116,14 @@ const ProductScreen = () => {
                   <strong>${products.price}</strong>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>Description: {products.description}</p>
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-            <Col md={3}>
-              <Card>
-                <ListGroup variant="flush">
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>Price:</Col>
-                      <Col>
-                        <strong>${products.price}</strong>
-                      </Col>
-                    </Row>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>Status:</Col>
-                      <Col>
-                        <strong>
-                          $
-                          {products.countInStock > 0
+                  <p>Status: {products.countInStock > 0
                             ? "In Stock"
-                            : "Out Of Stock"}
-                        </strong>
-                      </Col>
-                    </Row>
-                  </ListGroup.Item>
-
-                  {products.countInStock > 0 && (
+                            : "Out Of Stock"} </p>
+                </ListGroup.Item>
+                {products.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty:</Col>
-                        <Col>
+                        <Col md={3}>
                           <Form.Control
                             as="select"
                             value={qty}
@@ -161,12 +138,8 @@ const ProductScreen = () => {
                             )}
                           </Form.Control>
                         </Col>
-                      </Row>
-                    </ListGroup.Item>
-                  )}
-
-                  <ListGroup.Item>
-                    <Button
+                        <Col md={9}>
+                        <Button
                       style={{ width: "100%" }}
                       className="btn-block"
                       type="button"
@@ -175,9 +148,11 @@ const ProductScreen = () => {
                     >
                       Add To Cart
                     </Button>
-                  </ListGroup.Item>
-                </ListGroup>
-              </Card>
+                        </Col>
+                      </Row>
+                    </ListGroup.Item>
+                  )}
+              </ListGroup>
             </Col>
           </Row>
 
