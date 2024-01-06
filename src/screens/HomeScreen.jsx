@@ -40,17 +40,18 @@ console.log(brandsData)
         <Row>
           {/* Sidebar */}
           <Col md={3} className="d-none d-md-block">
-            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px' }}>
-              <h5>Brand Filter</h5>
+            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px',height:'100%' }}>
+              <h5>Product Filter</h5>
               <ul style={{ listStyle: 'none', padding: '0' }}>
                 {brand.map((brand) => (
                   <li key={brand}>
-                    <label>
                       <input
+                      style={{width:'15px',height:'15px'}}
                         type="checkbox"
                         checked={selectedBrands.includes(brand)}
                         onChange={() => handleBrandFilter(brand)}
                       />
+                      <label style={{marginLeft:'20px'}}>
                       {brand}
                     </label>
                   </li>
