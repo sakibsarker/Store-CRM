@@ -83,12 +83,12 @@ const ProductScreen = () => {
       ) : (
         <>
           <Meta title={products.name} />
-          <Row>
-            <Col md={7}>
+          <Row >
+            <Col md={8}>
               <Image
                 style={{
                   height: "700px",
-                  width: "700px",
+                  width: "800px",
                   objectFit: "cover",
                   borderRadius: "30px",
                 }}
@@ -101,7 +101,7 @@ const ProductScreen = () => {
             <Col md={4}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{products.name}</h3>
+                  <h3 style={{fontSize:'35px'}}>{products.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>Description: {products.description}</p>
@@ -156,7 +156,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ marginTop:'50px',paddingLeft:'100px',marginRight:'100px' }}>
+          <Row style={{ marginTop:'150px',paddingLeft:'100px',marginRight:'100px' }}>
             <Col md={5}>
               <div
                 style={{
