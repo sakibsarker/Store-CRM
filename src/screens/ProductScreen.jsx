@@ -181,7 +181,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ marginBottom: "50px" }}>
+          <Row style={{ marginBottom: "50px",paddingLeft:'100px',marginRight:'100px' }}>
             <Col md={5}>
               <div
                 style={{
@@ -223,7 +223,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row style={{paddingLeft:'100px',marginRight:'100px'}}>
             {/* First Column */}
             <Col md={7}>
               <div
@@ -321,7 +321,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ marginTop: "150px" }}>
+          <Row style={{ marginTop: "150px",paddingLeft:'100px',marginRight:'100px' }}>
             <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -418,7 +418,7 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ textAlign: "center", marginTop: "100px" }}>
+          <Row style={{ textAlign: "center", marginTop: "100px",paddingLeft:'100px',marginRight:'100px' }}>
             <h1
               style={{ color: "#3C4043", fontSize: "40px", fontWeight: "500" }}
             >
@@ -436,7 +436,8 @@ const ProductScreen = () => {
             <Row>Product</Row>
           </Row>
 
-          <Row style={{ marginTop: "100px", backgroundColor: "#F8F9FA",paddingBottom:'50px',paddingTop:'50px',marginBottom:'50px' }}>
+          <Row style={{ marginTop: "100px",marginLeft:'20px',marginRight:'20px', backgroundColor: "#F8F9FA",paddingBottom:'50px',
+          paddingTop:'50px',marginBottom:'50px' }}>
             <div style={{ textAlign: "center" }}>
               <img
                 src="/pinsvg.svg"
@@ -470,7 +471,7 @@ const ProductScreen = () => {
             </div>
           </Row>
 
-          <Row className="review">
+          <Row className="review" style={{paddingLeft:'100px',marginRight:'100px'}}>
             <Col md={6}>
               <h2>Reviews</h2>
               {products.reviews.length === 0 && <Message>No Reviews</Message>}
