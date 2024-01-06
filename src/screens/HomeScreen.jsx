@@ -12,17 +12,24 @@ const HomeScreen = () => {
 
   const {pageNumber,keyword}=useParams();
   const [selectedBrands, setSelectedBrands] = useState([]);
-  const [brand, setBrands] = useState([]);
+  const [brands, setBrands] = useState([]);
 
   useEffect(() => {
     // Fetch brands from the imported JSON file
     setBrands(brandsData.brands);
   }, []);
+
+  // useEffect(() => {
+  //   // Handle initial selection based on route
+  //   if (selectedBrand) {
+  //     handleBrandFilter(selectedBrand);
+  //   }
+  // }, [selectedBrand]);
   
   const {data,isLoading,error}=useGetProductsQuery({keyword,pageNumber,brand: selectedBrands });
   console.log(selectedBrands); 
 
-console.log(brand)
+console.log(brands)
 
 const handleBrandFilter = (brand) => {
   const updatedBrands = selectedBrands.includes(brand)
@@ -37,13 +44,21 @@ console.log(brandsData)
   return (
     <>
       <Container fluid>
+      <Row>
+        <Col md={3}></Col>
+        <Col md={9} style={{textAlign:'center'}}> <h1 style={{ fontSize: '45px' }}>
+    <span style={{ color: 'black', fontWeight: '700' }}>Welcome to</span>
+    <br />
+    <span style={{ color: '#188038', fontWeight: '700' }}>the Store CRM</span>
+  </h1> </Col>
+      </Row>
         <Row>
           {/* Sidebar */}
-          <Col md={3} className="d-none d-md-block">
-            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px',height:'100%' }}>
+          <Col md={3} className="d-none d-md-block"  style={{ position: 'sticky', top: 0, height: '100vh' }}>
+            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '15px',height:'100%' }}>
               <h5>Product Filter</h5>
               <ul style={{ listStyle: 'none', padding: '0' }}>
-                {brand.map((brand) => (
+                {brands.map((brand) => (
                   <li key={brand}>
                       <input
                       style={{width:'15px',height:'15px'}}
@@ -57,6 +72,7 @@ console.log(brandsData)
                   </li>
                 ))}
               </ul>
+              {selectedBrands}
             </div>
           </Col>
 
@@ -68,7 +84,7 @@ console.log(brandsData)
               <Message variant='danger'>{error?.data?.message || error.error}</Message>
             ) : (
               <>
-                <h1 style={{ color: 'black', textAlign: 'center',fontWeight:'600',fontSize:'30px' }}>Welcome to <br></br> the Store CRM</h1>
+                {/* <h1 style={{ color: 'black', textAlign: 'center',fontWeight:'600',fontSize:'30px' }}>Welcome to <br></br> the Store CRM</h1> */}
                 <Row>
                   {data.product.map((product) => (
                     <Col key={product._id} sm={12} md={6} lg={4} xl={4} className="mb-3">
