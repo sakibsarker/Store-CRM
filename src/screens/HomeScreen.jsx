@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
@@ -6,28 +6,34 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { Link, useParams } from 'react-router-dom';
 import Paginate from '../components/Paginate';
+import brandsData from '../assets/Brand.json'
 import ProductCarousel from '../components/ProductCarousel';
 const HomeScreen = () => {
 
   const {pageNumber,keyword}=useParams();
-  const [selectedBrand, setSelectedBrand] = useState('');
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [brand, setBrands] = useState([]);
+
+  useEffect(() => {
+    // Fetch brands from the imported JSON file
+    setBrands(brandsData.brands);
+  }, []);
   
-  const {data,isLoading,error}=useGetProductsQuery({keyword,pageNumber,brand: selectedBrand });
+  const {data,isLoading,error}=useGetProductsQuery({keyword,pageNumber,brand: selectedBrands });
+  console.log(selectedBrands); 
 
-  const uniqueBrands = data?.product
-    ? Array.from(new Set(data.product.map((product) => product.brand)))
-    : [];
+console.log(brand)
 
-  console.log(uniqueBrands)
+const handleBrandFilter = (brand) => {
+  const updatedBrands = selectedBrands.includes(brand)
+    ? selectedBrands.filter((selectedBrand) => selectedBrand !== brand)
+    : [...selectedBrands, brand];
 
-  const handleBrandFilter = (brand) => {
-    const updatedBrands = selectedBrand.includes(brand)
-      ? selectedBrand.filter((selectedBrand) => selectedBrand !== brand)
-      : [...selectedBrand, brand];
+  setSelectedBrands(updatedBrands);
+  console.log('Selected Brands:', updatedBrands);
+};
 
-    setSelectedBrand(updatedBrands);
-  };
-
+console.log(brandsData)
   return (
     <>
       <Container fluid>
@@ -37,12 +43,12 @@ const HomeScreen = () => {
             <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '5px' }}>
               <h5>Brand Filter</h5>
               <ul style={{ listStyle: 'none', padding: '0' }}>
-                {uniqueBrands.map((brand) => (
+                {brand.map((brand) => (
                   <li key={brand}>
                     <label>
                       <input
                         type="checkbox"
-                        checked={selectedBrand.includes(brand)}
+                        checked={selectedBrands.includes(brand)}
                         onChange={() => handleBrandFilter(brand)}
                       />
                       {brand}
