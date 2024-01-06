@@ -21,10 +21,11 @@ const HomeScreen = () => {
   console.log(uniqueBrands)
 
   const handleBrandFilter = (brand) => {
-    console.log('Selected Brand:', brand);
-    // Update state or dispatch an action to trigger a new API call with the selected brand
-    setSelectedBrand(brand);
-    
+    const updatedBrands = selectedBrand.includes(brand)
+      ? selectedBrand.filter((selectedBrand) => selectedBrand !== brand)
+      : [...selectedBrand, brand];
+
+    setSelectedBrand(updatedBrands);
   };
 
   return (
@@ -38,7 +39,14 @@ const HomeScreen = () => {
               <ul style={{ listStyle: 'none', padding: '0' }}>
                 {uniqueBrands.map((brand) => (
                   <li key={brand}>
-                    <span onClick={() => handleBrandFilter(brand)}>{brand}</span>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={selectedBrand.includes(brand)}
+                        onChange={() => handleBrandFilter(brand)}
+                      />
+                      {brand}
+                    </label>
                   </li>
                 ))}
               </ul>
