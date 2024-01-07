@@ -389,7 +389,7 @@ const ProductEditScreen = () => {
                         >
                         </Form.Control>
                     </Form.Group>
-                    <Button type='submit' value='primary' className='my-2'>Update</Button>
+                    <Button style={{ backgroundColor: "#1967D2"}} type='submit' value='primary' className='my-2'>Update</Button>
                 </Form>
             )
         }

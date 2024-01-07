@@ -35,7 +35,12 @@ const CartScreen = () => {
           <ListGroup.Item key={item._id}>
             <Row>
               <Col md={2}>
-                <Image src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded />
+                <Image  style={{
+                  height: "100px",
+                  width: "100px",
+                  objectFit: "cover",
+                  borderRadius: "30px",
+                }} src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded />
               </Col>
               <Col md={3}><Link to={`/product/${item._id}`}>{item.name}</Link></Col>
               <Col md={2}>$ {item.price}</Col>
@@ -71,7 +76,7 @@ const CartScreen = () => {
           Total $: {cartItems.reduce((acc,item)=>acc+item.price*item.qty,0).toFixed(2)}
         </ListGroup.Item>
         <ListGroup.Item>
-          <Button type='button' className='btn-block' disabled={cartItems.length===0} onClick={checkoutHandler}>
+          <Button type='button' style={{ backgroundColor: "#1967D2"}} className='btn-block' disabled={cartItems.length===0} onClick={checkoutHandler}>
             Process to checkout
           </Button>
         </ListGroup.Item>

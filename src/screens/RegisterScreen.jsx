@@ -103,7 +103,7 @@ const RegisterScreen = () => {
           </Form.Control>
         </Form.Group>
 
-        <Button type='submit' value='primary' className='mt-2' disabled={isLoading}>Register Now</Button>
+        <Button type='submit' style={{ backgroundColor: "#1967D2"}}  value='primary' className='mt-2' disabled={isLoading}>Register Now</Button>
         {isLoading && <Loader/>}
       </Form>
       <Row className='py-3'>

@@ -69,7 +69,12 @@ const PlaceorderScreen = () => {
                 <ListGroup.Item key={index}>
                   <Row>
                     <Col md={2}>
-                    <Image src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded/>
+                    <Image style={{
+                  height: "100px",
+                  width: "100px",
+                  objectFit: "cover",
+                  borderRadius: "30px",
+                }} src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded/>
                     </Col>
                     <Col>
                     <Link to={`/product/${item._id}`}>
@@ -77,7 +82,7 @@ const PlaceorderScreen = () => {
                     </Link>
                     </Col>
                     <Col md={'4'}>
-                    {item.qty} x $ {item.price} = {(item.qty * item.price).toFixed(2)}
+                    Pics {item.qty} x $ {item.price} = $ {(item.qty * item.price).toFixed(2)}
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -129,6 +134,7 @@ const PlaceorderScreen = () => {
           <ListGroup.Item>
             {error && <Message variant='danger'>{error.message}</Message>}
             <Button type='button' className='btn-block' 
+            style={{ backgroundColor: "#1967D2",}}
             disabled={cart.cartItems.length===0}
              onClick={placeOrderHandler}>Place Order</Button>
           </ListGroup.Item>

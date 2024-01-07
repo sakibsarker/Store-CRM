@@ -84,7 +84,7 @@ const  UserListScreen = () => {
 <LinkContainer to={`/admin/user/${user._id}/edit`}>
                    <Button className='btn-sm ' variant='light'><FaEdit color='green'/> Edit</Button>         
                </LinkContainer>
-               <Button variant='light' className='btn-sm mx-2' onClick={()=>deleteHandler(user._id)}><FaTrash color='red'/></Button>
+               <Button style={{ backgroundColor: "#1967D2"}} variant='light' className='btn-sm mx-2' onClick={()=>deleteHandler(user._id)}><FaTrash color='red'/></Button>
                     
                 </td>
             </tr>

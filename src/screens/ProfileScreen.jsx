@@ -86,7 +86,7 @@ const ProfileScreen = () => {
                </Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary' className='my-2'>Update</Button>
+            <Button style={{ backgroundColor: "#1967D2"}} type='submit' variant='primary' className='my-2'>Update</Button>
             {loadingUpdateProfile && <Loader/>}
         </Form>
     </Col>

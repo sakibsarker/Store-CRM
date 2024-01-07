@@ -73,7 +73,17 @@ const OrderScreen = () => {
     return isLoading?<Loader/>
     :error?<Message variant="Danger">{error?.data?.message||error.message}</Message>
     :(<>
-    <h2>order: {order._id}</h2>
+    <Row>
+      <Col>
+      <ListGroup variant='flush'>
+        <ListGroup.Item>
+        <h2>Order ID: {order._id}</h2>
+        </ListGroup.Item>
+     
+        </ListGroup>
+      </Col>
+    </Row>
+    
     <Row>
       <Col md={8}>
         <ListGroup variant='flush'>
@@ -143,7 +153,7 @@ const OrderScreen = () => {
                   {loadingPay && <Loader/>}
                 
                     <div>
-                  <Button onClick={onApproveTest} style={{marginBottom:'10px'}}>Cash on delivery</Button>
+                  <Button onClick={onApproveTest} style={{marginBottom:'10px',backgroundColor: "#1967D2"}}>Cash on delivery</Button>
                     </div>
                
                 </ListGroup.Item>
@@ -153,7 +163,7 @@ const OrderScreen = () => {
            {loadingDeliver && <Loader/>}
            {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered &&(
             <ListGroup.Item>
-              <Button type='button' className='btn btn-block' onClick={deliverOrderHandler}>
+              <Button type='button' style={{ backgroundColor: "#1967D2"}} className='btn btn-block' onClick={deliverOrderHandler}>
                 Make as Delivered
               </Button>
             </ListGroup.Item>

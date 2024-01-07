@@ -74,7 +74,7 @@ const LoginScreen = () => {
           </Form.Control>
         </Form.Group>
 
-        <Button type='submit' value='primary' className='mt-2' disabled={isLoading}>Sign In</Button>
+        <Button type='submit' style={{ backgroundColor: "#1967D2"}} value='primary' className='mt-2' disabled={isLoading}>Sign In</Button>
         {isLoading && <Loader/>}
       </Form>
       <Row className='py-3'>

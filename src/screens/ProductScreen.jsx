@@ -140,7 +140,7 @@ const ProductScreen = () => {
                         </Col>
                         <Col md={9}>
                         <Button
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", backgroundColor: "#1967D2", }}
                       className="btn-block"
                       type="button"
                       disabled={products.countInStock === 0}

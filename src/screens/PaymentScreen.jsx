@@ -49,7 +49,7 @@ const PaymentScreen = () => {
                 </Form.Check>
                 </Col>
             </Form.Group>
-            <Button type='submit' variant='primary'>Continue</Button>
+            <Button type='submit' style={{ backgroundColor: "#1967D2"}} variant='primary'>Continue</Button>
         </Form>
     </FormContainer>
   )
