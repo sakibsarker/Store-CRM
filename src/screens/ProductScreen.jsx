@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -70,6 +70,28 @@ const ProductScreen = () => {
     }
   };
 
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+
+      // Adjust the threshold as needed
+      if (offset > 50) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -81,40 +103,42 @@ const ProductScreen = () => {
       ) : (
         <>
           <div
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 1000,
+        backgroundColor: '#FFFFFF',
+        borderBottom: isSticky ? '.5px solid black' : 'none',
+        transition: 'background-color 0.3s, border-bottom 0.3s',
+      }}
+    >
+      <Row className="d-flex justify-content-between align-items-center">
+        <Col md={6}>
+          <Link
             style={{
-              position: "sticky",
-              top: 0,
-              zIndex: 1000,
-              backgroundColor: "#FFFFFF",
+              backgroundColor: '#F4F4F4',
+              color: 'black',
+              border: '1px solid #F4F4F4',
             }}
+            className="btn btn-white my-2"
+            to="/"
           >
-            <Row className="d-flex justify-content-between align-items-center">
-              <Col md={6}>
-                <Link
-                  style={{
-                    backgroundColor: "#F4F4F4", // Set background color
-                    color: "black", // Set text color
-                    border: "1px solid #F4F4F4", // Set border color if needed
-                  }}
-                  className="btn btn-white my-2"
-                  to="/"
-                >
-                  Go Back
-                </Link>
-              </Col>
-              <Col md={6} className="text-end">
-                <Button
-                  style={{ width: "50%", backgroundColor: "#1967D2" }}
-                  className="btn-block"
-                  type="button"
-                  disabled={products.countInStock === 0}
-                  onClick={addToCartHandler}
-                >
-                  Add To Cart
-                </Button>
-              </Col>
-            </Row>
-          </div>
+            Go Back
+          </Link>
+        </Col>
+        <Col md={6} className="text-end">
+          <Button
+            style={{ width: '50%', backgroundColor: '#1967D2' }}
+            className="btn-block"
+            type="button"
+            disabled={products.countInStock === 0}
+            onClick={addToCartHandler}
+          >
+            Add To Cart
+          </Button>
+        </Col>
+      </Row>
+    </div>
 
           <Meta title={products.name} />
           <Row>

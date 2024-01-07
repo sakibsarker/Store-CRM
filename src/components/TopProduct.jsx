@@ -20,7 +20,7 @@ const TopProduct = () => {
       <Row>
       {products.map((product) => (
         <Col key={product._id} sm={12} md={6} lg={4} xl={4} className="mb-3">
-          <Link to={`${product._id}`} style={{ textDecoration: 'none' }}>
+          <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
             <div style={{ backgroundColor: '#F8F9FA', borderRadius: '25px', padding: '15px', textAlign: 'start', height: '500px' }}>
               <Image
                 src={`http://localhost:5000${product.image}`}
@@ -37,7 +37,7 @@ const TopProduct = () => {
               <div style={{ height: '200px', marginTop: '10px' }}>
                 <h6 className="product-title" style={{ marginBottom: '10px',fontSize:'26px' }}>{product.name}</h6>
                 <p style={{ marginBottom: '10px' }}>${product.price}</p>
-                <Button style={{ backgroundColor: '#1967D2',width:'30%' }} variant="primary">
+                <Button style={{ backgroundColor: '#1967D2',width:'20%' }} variant="primary">
                   Buy
                 </Button>
               </div>
