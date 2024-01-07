@@ -72,9 +72,6 @@ const ProductScreen = () => {
 
   return (
     <>
-      <Link className="btn btn-white my-2" to="/">
-        Go Back
-      </Link>
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -83,6 +80,42 @@ const ProductScreen = () => {
         </Message>
       ) : (
         <>
+          <div
+            style={{
+              position: "sticky",
+              top: 0,
+              zIndex: 1000,
+              backgroundColor: "#FFFFFF",
+            }}
+          >
+            <Row className="d-flex justify-content-between align-items-center">
+              <Col md={6}>
+                <Link
+                  style={{
+                    backgroundColor: "#F4F4F4", // Set background color
+                    color: "black", // Set text color
+                    border: "1px solid #F4F4F4", // Set border color if needed
+                  }}
+                  className="btn btn-white my-2"
+                  to="/"
+                >
+                  Go Back
+                </Link>
+              </Col>
+              <Col md={6} className="text-end">
+                <Button
+                  style={{ width: "50%", backgroundColor: "#1967D2" }}
+                  className="btn-block"
+                  type="button"
+                  disabled={products.countInStock === 0}
+                  onClick={addToCartHandler}
+                >
+                  Add To Cart
+                </Button>
+              </Col>
+            </Row>
+          </div>
+
           <Meta title={products.name} />
           <Row>
             <Col md={8}>
@@ -417,6 +450,7 @@ const ProductScreen = () => {
               marginTop: "100px",
               paddingLeft: "100px",
               marginRight: "100px",
+           
             }}
           >
             <h1
@@ -432,9 +466,9 @@ const ProductScreen = () => {
                 Browse all accessories {">"}
               </Link>
             </p>
-            <Row>
-              {" "}
-              <TopProduct />{" "}
+            <Row style={{marginTop:"30px"}}>
+            
+              <TopProduct />
             </Row>
           </Row>
 
@@ -469,16 +503,22 @@ const ProductScreen = () => {
                 Keep me updated on devices, news, tips and offers from the
                 Google Store.
               </p>
-              <Button
-                style={{
-                  width: "150px",
+              <Link to="/register">
+                <Button
+                 style={{
+                 
                   background: "white",
                   color: "#3C4043",
                   borderColor: "#3C4043",
+                  borderStyle: "solid", // Add solid border style
+                  borderWidth: "2px",   // Adjust border width as needed
+                  fontWeight: "500",   // Add bold font weight
                 }}
-              >
-                Register
-              </Button>
+                
+                >
+                  Register
+                </Button>
+              </Link>
             </div>
           </Row>
 
@@ -532,6 +572,7 @@ const ProductScreen = () => {
                         disabled={loadingReview}
                         type="submit"
                         variant="primary"
+                        style={{ backgroundColor: "#1967D2" }}
                       >
                         Submit
                       </Button>
