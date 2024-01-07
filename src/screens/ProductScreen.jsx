@@ -18,6 +18,7 @@ import {
 import { addToCart } from "../slices/cartSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import TopProduct from "../components/TopProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -83,7 +84,7 @@ const ProductScreen = () => {
       ) : (
         <>
           <Meta title={products.name} />
-          <Row >
+          <Row>
             <Col md={8}>
               <Image
                 style={{
@@ -101,7 +102,7 @@ const ProductScreen = () => {
             <Col md={4}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3 style={{fontSize:'35px'}}>{products.name}</h3>
+                  <h3 style={{ fontSize: "35px" }}>{products.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>Description: {products.description}</p>
@@ -116,47 +117,52 @@ const ProductScreen = () => {
                   <strong>${products.price}</strong>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>Status: {products.countInStock > 0
-                            ? "In Stock"
-                            : "Out Of Stock"} </p>
+                  <p>
+                    Status:{" "}
+                    {products.countInStock > 0 ? "In Stock" : "Out Of Stock"}{" "}
+                  </p>
                 </ListGroup.Item>
                 {products.countInStock > 0 && (
-                    <ListGroup.Item>
-                      <Row>
-                        <Col md={3}>
-                          <Form.Control
-                            as="select"
-                            value={qty}
-                            onChange={(e) => setQty(Number(e.target.value))}
-                          >
-                            {[...Array(products.countInStock).keys()].map(
-                              (x) => (
-                                <option key={x + 1} value={x + 1}>
-                                  {x + 1}
-                                </option>
-                              )
-                            )}
-                          </Form.Control>
-                        </Col>
-                        <Col md={9}>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col md={3}>
+                        <Form.Control
+                          as="select"
+                          value={qty}
+                          onChange={(e) => setQty(Number(e.target.value))}
+                        >
+                          {[...Array(products.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))}
+                        </Form.Control>
+                      </Col>
+                      <Col md={9}>
                         <Button
-                      style={{ width: "100%", backgroundColor: "#1967D2", }}
-                      className="btn-block"
-                      type="button"
-                      disabled={products.countInStock === 0}
-                      onClick={addToCartHandler}
-                    >
-                      Add To Cart
-                    </Button>
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                  )}
+                          style={{ width: "100%", backgroundColor: "#1967D2" }}
+                          className="btn-block"
+                          type="button"
+                          disabled={products.countInStock === 0}
+                          onClick={addToCartHandler}
+                        >
+                          Add To Cart
+                        </Button>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Col>
           </Row>
 
-          <Row style={{ marginTop:'150px',paddingLeft:'100px',marginRight:'100px' }}>
+          <Row
+            style={{
+              marginTop: "150px",
+              paddingLeft: "100px",
+              marginRight: "100px",
+            }}
+          >
             <Col md={5}>
               <div
                 style={{
@@ -198,7 +204,13 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{paddingLeft:'100px',marginRight:'100px',marginTop:'50px'}}>
+          <Row
+            style={{
+              paddingLeft: "100px",
+              marginRight: "100px",
+              marginTop: "50px",
+            }}
+          >
             {/* First Column */}
             <Col md={7}>
               <div
@@ -296,7 +308,13 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ marginTop: "150px",paddingLeft:'100px',marginRight:'100px' }}>
+          <Row
+            style={{
+              marginTop: "150px",
+              paddingLeft: "100px",
+              marginRight: "100px",
+            }}
+          >
             <Col md={12}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -393,26 +411,44 @@ const ProductScreen = () => {
             </Col>
           </Row>
 
-          <Row style={{ textAlign: "center", marginTop: "100px",paddingLeft:'100px',marginRight:'100px' }}>
+          <Row
+            style={{
+              textAlign: "center",
+              marginTop: "100px",
+              paddingLeft: "100px",
+              marginRight: "100px",
+            }}
+          >
             <h1
               style={{ color: "#3C4043", fontSize: "40px", fontWeight: "500" }}
             >
               Other useful accessories.
             </h1>
-            <p
-              style={{
-                color: "#196CD5",
-                fontWeight: "500",
-                textDecoration: "underline",
-              }}
-            >
-              Browse all accessories {">"}
+            <p style={{ color: "#196CD5", fontWeight: "500" }}>
+              <Link
+                to="/"
+                style={{ textDecoration: "underline", color: "#196CD5" }}
+              >
+                Browse all accessories {">"}
+              </Link>
             </p>
-            <Row>Product</Row>
+            <Row>
+              {" "}
+              <TopProduct />{" "}
+            </Row>
           </Row>
 
-          <Row style={{ marginTop: "100px",marginLeft:'20px',marginRight:'20px', backgroundColor: "#F8F9FA",paddingBottom:'50px',
-          paddingTop:'50px',marginBottom:'50px' }}>
+          <Row
+            style={{
+              marginTop: "100px",
+              marginLeft: "20px",
+              marginRight: "20px",
+              backgroundColor: "#F8F9FA",
+              paddingBottom: "50px",
+              paddingTop: "50px",
+              marginBottom: "50px",
+            }}
+          >
             <div style={{ textAlign: "center" }}>
               <img
                 src="/pinsvg.svg"
@@ -446,7 +482,10 @@ const ProductScreen = () => {
             </div>
           </Row>
 
-          <Row className="review" style={{paddingLeft:'100px',marginRight:'100px'}}>
+          <Row
+            className="review"
+            style={{ paddingLeft: "100px", marginRight: "100px" }}
+          >
             <Col md={6}>
               <h2>Reviews</h2>
               {products.reviews.length === 0 && <Message>No Reviews</Message>}
