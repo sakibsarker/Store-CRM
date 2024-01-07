@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header>
        
-      <Navbar bg="dark" variant="dark" expand="sm" collapseOnSelect>
+      <Navbar expand="sm" collapseOnSelect>
         <Container style={{marginRight:'60px',marginLeft:'60px'}}>
           <LinkContainer to='/'>
           <Navbar.Brand>Store CRM</Navbar.Brand>
@@ -42,8 +42,7 @@ const Header = () => {
            <Nav className="ms-auto">
             <SearchBox/>
             <LinkContainer to="/cart">
-            <Nav.Link><FaShoppingCart size={20} style={{marginRight:'10px'}}/>
-            Cart
+            <Nav.Link><FaShoppingCart size={20} />
             {
               cartItems.length>0 &&(
                 <Badge pill bg='danger' style={{marginLeft:'10px'}}>
