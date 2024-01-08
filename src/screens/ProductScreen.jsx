@@ -159,10 +159,10 @@ const ProductScreen = () => {
             <Col md={4}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3 style={{ fontSize: "35px" }}>{products.name}</h3>
+                  <h3 style={{ fontSize: "35px",color: "#3C4043" }}>{products.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>Description: {products.description}</p>
+                  <p style={{color: "#3C4043" }}>{products.description}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
@@ -171,7 +171,7 @@ const ProductScreen = () => {
                   />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <strong>${products.price}</strong>
+                  <strong >${products.price}</strong>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
@@ -184,6 +184,7 @@ const ProductScreen = () => {
                     <Row>
                       <Col md={3}>
                         <Form.Control
+                        
                           as="select"
                           value={qty}
                           onChange={(e) => setQty(Number(e.target.value))}
