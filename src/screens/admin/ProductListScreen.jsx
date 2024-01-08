@@ -54,7 +54,7 @@ const ProductListScreen = () => {
         <h1>Products</h1>
       </Col>
       <Col className="text-end">
-        <Button onClick={createProductHandler} className="btn-sm m-3">
+        <Button style={{ backgroundColor: '#1967D2' }} onClick={createProductHandler} className="btn-sm m-3">
         <FaEdit/> Create Products
         </Button>
       </Col>

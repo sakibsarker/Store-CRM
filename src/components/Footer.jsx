@@ -6,22 +6,22 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: '#f8f9fa', borderTop: '1px solid #000', padding: '5px 0' }}>
+    <footer style={{ backgroundColor: '#f8f9fa', borderTop: '1px solid #000', }}>
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} className="text-center text-md-start py-3">
             {/* Social Icons */}
             <a href="#" className="social-icon">
-              <FaFacebook />
+              <FaFacebook size={25} />
             </a>
             <a href="#" className="social-icon">
-              <FaTwitter />
+              <FaTwitter size={25}/>
             </a>
             <a href="#" className="social-icon">
-              <FaInstagram />
+              <FaInstagram size={25}/>
             </a>
             <a href="#" className="social-icon">
-              <FaLinkedin />
+              <FaLinkedin size={25} />
             </a>
           </Col>
           <Col xs={12} md={6} className="text-center text-md-end py-3">

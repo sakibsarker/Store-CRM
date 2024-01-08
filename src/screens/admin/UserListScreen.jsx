@@ -39,7 +39,7 @@ const  UserListScreen = () => {
         <h1>User List</h1>
       </Col>
       <Col className="text-end">
-        <Button className="btn-sm m-3">
+        <Button style={{ backgroundColor: "#1967D2"}}  className="btn-sm m-3">
         <FaEdit/> Create User
         </Button>
       </Col>
@@ -84,7 +84,7 @@ const  UserListScreen = () => {
 <LinkContainer to={`/admin/user/${user._id}/edit`}>
                    <Button className='btn-sm ' variant='light'><FaEdit color='green'/> Edit</Button>         
                </LinkContainer>
-               <Button style={{ backgroundColor: "#1967D2"}} variant='light' className='btn-sm mx-2' onClick={()=>deleteHandler(user._id)}><FaTrash color='red'/></Button>
+               <Button variant='light' className='btn-sm mx-2' onClick={()=>deleteHandler(user._id)}><FaTrash color='red'/></Button>
                     
                 </td>
             </tr>
