@@ -6,26 +6,26 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: '#f8f9fa', borderTop: '1px solid #000', }}>
-      <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={6} className="text-center text-md-start py-3">
+    <footer style={{borderTop:'1px solid #d9d9d9' }}>
+      <Container >
+        <Row style={{paddingLeft:'50px',paddingRight:'50px'}} className="align-items-center">
+          <Col xs={12} md={6} className="text-center text-md-start py-2">
             {/* Social Icons */}
             <a href="#" className="social-icon">
-              <FaFacebook size={25} />
+              <FaFacebook color='#3C4043' size={20} style={{marginRight:'10px'}} />
             </a>
             <a href="#" className="social-icon">
-              <FaTwitter size={25}/>
+              <FaTwitter  color='#3C4043' size={20} style={{marginRight:'10px'}}/>
             </a>
             <a href="#" className="social-icon">
-              <FaInstagram size={25}/>
+              <FaInstagram  color='#3C4043' size={20} style={{marginRight:'10px'}}/>
             </a>
             <a href="#" className="social-icon">
-              <FaLinkedin size={25} />
+              <FaLinkedin  color='#3C4043' size={20} style={{marginRight:'10px'}}/>
             </a>
           </Col>
           <Col xs={12} md={6} className="text-center text-md-end py-3">
-            <p>Store CRM &copy; {currentYear} Powered by Sakib Sarker</p>
+            <p style={{color:'#3C4043',fontSize:'15px'}}>Alveus RM &copy; {currentYear}</p>
           </Col>
         </Row>
       </Container>

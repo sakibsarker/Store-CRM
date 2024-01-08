@@ -35,7 +35,7 @@ const Header = () => {
       <Navbar expand="sm" collapseOnSelect>
         <Container style={{marginRight:'60px',marginLeft:'60px'}}>
           <LinkContainer to='/'>
-          <Navbar.Brand>Store CRM</Navbar.Brand>
+          <Navbar.Brand>Alveus RM</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
