@@ -10,6 +10,8 @@ const CartScreen = () => {
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
+    const { userInfo } = useSelector((state) => state.auth);
+
     const cart=useSelector((state)=>state.cart);
     const {cartItems}=cart;
 
@@ -43,7 +45,7 @@ const CartScreen = () => {
                 }} src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded />
               </Col>
               <Col md={3}><Link to={`/product/${item._id}`}>{item.name}</Link></Col>
-              <Col md={2}>$ {item.price}</Col>
+              <Col md={2}>{userInfo && `$ ${item.price}`}</Col>
               <Col md={2}>
               <Form.Control
                             as='select'

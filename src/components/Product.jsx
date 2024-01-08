@@ -2,7 +2,9 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import {Link}  from 'react-router-dom'
 import Rating from './Rating'
+import {useSelector} from 'react-redux';
 const Product = ({prduct}) => {
+  const {userInfo}=useSelector((state)=>state.auth);
   return (
     <>
         <Link to={`/product/${prduct._id}`}>
@@ -19,7 +21,8 @@ const Product = ({prduct}) => {
                 </Card.Title>
             </Link>
             <Card.Text as="h6" style={{marginTop:'5px'}}>
-                ${prduct.price}
+
+                {userInfo && `$ ${prduct.price}`}
             </Card.Text>
          </Card.Body>
     </>

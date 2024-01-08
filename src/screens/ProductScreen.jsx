@@ -170,9 +170,11 @@ const ProductScreen = () => {
                     text={`${products.numReviews} reviews`}
                   />
                 </ListGroup.Item>
+                {userInfo &&
                 <ListGroup.Item>
                   <strong >${products.price}</strong>
                 </ListGroup.Item>
+                }
                 <ListGroup.Item>
                   <p>
                     Status:{" "}
