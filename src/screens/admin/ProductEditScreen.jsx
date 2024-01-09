@@ -5,7 +5,7 @@ import {FaTimes,FaEdit,FaTrash} from 'react-icons/fa'
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import FormContainer from '../../components/FormContainer'
-import {useUpdateProductMutation,useGetProductDetailsQuery,useUploadProductImageMutation} from '../../slices/productsApiSlice';
+import {useUpdateProductMutation,useGetProductDetailsQuery,useUploadProductImageMutation,useUploadBannerImageMutation} from '../../slices/productsApiSlice';
 import { useSelector,useDispatch } from 'react-redux/';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -42,6 +42,8 @@ const ProductEditScreen = () => {
     const [updateProduct,{isLoading:loadingUpdating}] =useUpdateProductMutation();
 
     const [uploadProductImage,{isLoading:loadingUpload}] =useUploadProductImageMutation();
+
+    const [uploadBannerImage,{isLoading:loadingBannerImg}] =useUploadBannerImageMutation();
 
 
 
@@ -119,6 +121,19 @@ const ProductEditScreen = () => {
             const res=await uploadProductImage(formData).unwrap();
             toast.success(res.message);
             setImage(res.image);
+        } catch (error) {
+            toast.error(error?.data?.message||error.error)
+            
+        }
+    }
+
+    const uploadBannerFileHandler=async(e)=>{
+        const formData=new FormData();
+        formData.append('image',e.target.files[0]);
+        try {
+            const res=await uploadBannerImage(formData).unwrap();
+            toast.success(res.message);
+            setBannerimg(res.image);
         } catch (error) {
             toast.error(error?.data?.message||error.error)
             
@@ -220,7 +235,13 @@ const ProductEditScreen = () => {
                         value={bannerimg}
                         onChange={(e)=>setBannerimg}
                         ></Form.Control>
+                         <Form.Control
+                        type='file'
+                        label='Choose file'
+                        onChange={uploadBannerFileHandler}
+                        ></Form.Control>
                     </Form.Group>
+                    {loadingBannerImg && <Loader/>}
 
                     <Form.Group controlId='titlebannertwo'>
                         <Form.Label>Title Banner two</Form.Label>
