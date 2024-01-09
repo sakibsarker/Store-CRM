@@ -5,7 +5,13 @@ import {FaTimes,FaEdit,FaTrash} from 'react-icons/fa'
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import FormContainer from '../../components/FormContainer'
-import {useUpdateProductMutation,useGetProductDetailsQuery,useUploadProductImageMutation,useUploadBannerImageMutation} from '../../slices/productsApiSlice';
+import {useUpdateProductMutation,
+    useGetProductDetailsQuery,
+    useUploadProductImageMutation,
+    useUploadBannerImageMutation,
+    useUploadBannerImageTwoMutation,
+    useUploadBannerImageThreeMutation} from '../../slices/productsApiSlice';
+
 import { useSelector,useDispatch } from 'react-redux/';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -44,6 +50,10 @@ const ProductEditScreen = () => {
     const [uploadProductImage,{isLoading:loadingUpload}] =useUploadProductImageMutation();
 
     const [uploadBannerImage,{isLoading:loadingBannerImg}] =useUploadBannerImageMutation();
+
+    const [uploadBannerImageTwo,{isLoading:loadingBannerImgTwo}] =useUploadBannerImageTwoMutation();
+
+    const [uploadBannerImageThree,{isLoading:loadingBannerImgThree}] =useUpdateProductMutation();
 
 
 
@@ -134,6 +144,32 @@ const ProductEditScreen = () => {
             const res=await uploadBannerImage(formData).unwrap();
             toast.success(res.message);
             setBannerimg(res.image);
+        } catch (error) {
+            toast.error(error?.data?.message||error.error)
+            
+        }
+    }
+
+    const uploadBannerTwoFileHandler=async(e)=>{
+        const formData=new FormData();
+        formData.append('image',e.target.files[0]);
+        try {
+            const res=await uploadBannerImageTwo(formData).unwrap();
+            toast.success(res.message);
+            setBannerimgtwo(res.image);
+        } catch (error) {
+            toast.error(error?.data?.message||error.error)
+            
+        }
+    }
+
+    const uploadBannerThreeFileHandler=async(e)=>{
+        const formData=new FormData();
+        formData.append('image',e.target.files[0]);
+        try {
+            const res=await uploadBannerImageThree(formData).unwrap();
+            toast.success(res.message);
+            setBannerimgthree(res.image);
         } catch (error) {
             toast.error(error?.data?.message||error.error)
             
@@ -273,8 +309,13 @@ const ProductEditScreen = () => {
                         value={bannerimgtwo}
                         onChange={(e)=>setBannerimgtwo}
                         ></Form.Control>
+                    <Form.Control
+                        type='file'
+                        label='Choose file'
+                        onChange={uploadBannerTwoFileHandler}
+                        ></Form.Control>
                     </Form.Group>
-
+                    {loadingBannerImgTwo && <Loader/>}
 
                     <Form.Group controlId='titlebannerthree'>
                         <Form.Label>Title Banner three</Form.Label>

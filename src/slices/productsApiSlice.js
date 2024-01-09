@@ -1,4 +1,4 @@
-import { PRODUCTS_URL, UPLOADS_URL,UPLOADS_BANNERIMG } from "../constants";
+import { PRODUCTS_URL, UPLOADS_URL,UPLOADS_BANNERIMG,UPLOADS_BANNERIMGTWO,UPLOADS_BANNERIMGTHREE } from "../constants";
 import { apiSlice } from "./apiSlice";
 
 export const productsApiSlice = apiSlice.injectEndpoints({
@@ -50,6 +50,20 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    uploadBannerImageTwo: builder.mutation({
+      query: (data) => ({
+        url: `${UPLOADS_BANNERIMGTWO}`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    uploadBannerImageThree: builder.mutation({
+      query: (data) => ({
+        url: `${UPLOADS_BANNERIMGTHREE}`,
+        method: "POST",
+        body: data,
+      }),
+    }),
     deleteProduct: builder.mutation({
       query: (productId) => ({
         url: `${PRODUCTS_URL}/${productId}`,
@@ -81,6 +95,8 @@ export const {
   useUpdateProductMutation,
   useUploadProductImageMutation,
   useUploadBannerImageMutation,
+  useUploadBannerImageTwoMutation,
+  useUploadBannerImageThreeMutation,
   useDeleteProductMutation,
   useCreateReviewMutation,
   useGetTopProductQuery,

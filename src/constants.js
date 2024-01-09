@@ -5,4 +5,5 @@ export const USERS_URL='/api/users'
 export const ORDERS_URL='/api/orders'
 export const UPLOADS_URL='/api/upload'
 export const UPLOADS_BANNERIMG='/api/upload/bannerimg'
-
+export const UPLOADS_BANNERIMGTWO='/api/upload/bannerimgtwo'
+export const UPLOADS_BANNERIMGTHREE='/api/upload/bannerimgthree'
