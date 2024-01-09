@@ -8,9 +8,11 @@ import FormContainer from '../../components/FormContainer'
 import {useUpdateProductMutation,
     useGetProductDetailsQuery,
     useUploadProductImageMutation,
+    useUploadProductImageTwoMutation,
+    useUploadProductImageThreeMutation,
     useUploadBannerImageMutation,
     useUploadBannerImageTwoMutation,
-    useUploadBannerImageThreeMutation} from '../../slices/productsApiSlice';
+    useUploadBannerImageThreeMutation,} from '../../slices/productsApiSlice';
 
 import { useSelector,useDispatch } from 'react-redux/';
 import { toast } from 'react-toastify';
@@ -50,6 +52,10 @@ const ProductEditScreen = () => {
     const [updateProduct,{isLoading:loadingUpdating}] =useUpdateProductMutation();
 
     const [uploadProductImage,{isLoading:loadingUpload}] =useUploadProductImageMutation();
+
+    const [uploadProductImageTwo,{isLoading:loadingUploadTwo}] =useUploadProductImageTwoMutation();
+
+    const [uploadProductImageThree,{isLoading:loadingUploadThree}] =useUploadProductImageThreeMutation();
 
     const [uploadBannerImage,{isLoading:loadingBannerImg}] =useUploadBannerImageMutation();
 
@@ -137,6 +143,32 @@ const ProductEditScreen = () => {
             const res=await uploadProductImage(formData).unwrap();
             toast.success(res.message);
             setImage(res.image);
+        } catch (error) {
+            toast.error(error?.data?.message||error.error)
+            
+        }
+    }
+
+    const uploadFileHandlerTwo=async(e)=>{
+        const formData=new FormData();
+        formData.append('image',e.target.files[0]);
+        try {
+            const res=await uploadProductImageTwo(formData).unwrap();
+            toast.success(res.message);
+            setImagetwo(res.image);
+        } catch (error) {
+            toast.error(error?.data?.message||error.error)
+            
+        }
+    }
+
+    const uploadFileHandlerThree=async(e)=>{
+        const formData=new FormData();
+        formData.append('image',e.target.files[0]);
+        try {
+            const res=await uploadProductImageThree(formData).unwrap();
+            toast.success(res.message);
+            setImagethree(res.image);
         } catch (error) {
             toast.error(error?.data?.message||error.error)
             
@@ -243,9 +275,14 @@ const ProductEditScreen = () => {
                         value={imagetwo}
                         onChange={(e)=>setImagetwo}
                         ></Form.Control>
-
-                        
+                         <Form.Control
+                        type='file'
+                        label='Choose file'
+                        onChange={uploadFileHandlerTwo}
+                        ></Form.Control>
                     </Form.Group>
+                    {loadingUploadTwo && <Loader/>}
+
                  
 
 
@@ -257,9 +294,13 @@ const ProductEditScreen = () => {
                         value={imagethree}
                         onChange={(e)=>setImagethree}
                         ></Form.Control>
-
-                     
+                        <Form.Control
+                        type='file'
+                        label='Choose file'
+                        onChange={uploadFileHandlerThree}
+                        ></Form.Control>
                     </Form.Group>
+                    {loadingUploadThree && <Loader/>}
                     
 
 
