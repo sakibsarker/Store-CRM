@@ -228,7 +228,7 @@ const ProductEditScreen = () => {
             :error?<Message variant='danger'>{error}</Message>:(
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='name'>
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Product Name</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter name'
@@ -249,9 +249,20 @@ const ProductEditScreen = () => {
                         </Form.Control>
                     </Form.Group>
 
+                    <Form.Group controlId='description'>
+                        <Form.Label>Product Description</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter description'
+                        value={description}
+                        onChange={(e)=>setDescription(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
 {/* image */}
                     <Form.Group controlId='image'>
-                        <Form.Label>Image</Form.Label>
+                        <Form.Label>Product Image One</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter image url'
@@ -268,7 +279,7 @@ const ProductEditScreen = () => {
                     {loadingUpload && <Loader/>}
 
                     <Form.Group controlId='imageTwo'>
-                        <Form.Label>Image Two</Form.Label>
+                        <Form.Label>Product Image Two</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter image Two url'
@@ -287,7 +298,7 @@ const ProductEditScreen = () => {
 
 
                     <Form.Group controlId='imageThree'>
-                        <Form.Label>Image Three</Form.Label>
+                        <Form.Label>Product Image Three</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter image Three url'
@@ -315,8 +326,20 @@ const ProductEditScreen = () => {
                         </Form.Control>
                     </Form.Group>
 
+                    
+                    <Form.Group controlId='cetegory'>
+                        <Form.Label>Category</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter cetegory'
+                        value={category}
+                        onChange={(e)=>setCategory(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+
                     <Form.Group controlId='titlebanner'>
-                        <Form.Label>Title Banner</Form.Label>
+                        <Form.Label>Title Banner One</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter titlebanner'
@@ -327,7 +350,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
                     
                     <Form.Group controlId='desbanner'>
-                        <Form.Label>Description Banner</Form.Label>
+                        <Form.Label>Description Banner One</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter description banner'
@@ -338,7 +361,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
 
                     <Form.Group controlId='bannerimg'>
-                        <Form.Label>bannerimg</Form.Label>
+                        <Form.Label>Image Banner One</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter bannerimg url'
@@ -376,7 +399,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
 
                     <Form.Group controlId='bannerimgtwo'>
-                        <Form.Label>bannerimgtwo</Form.Label>
+                        <Form.Label>Image Banner Two</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter bannerimgtwo url'
@@ -392,7 +415,7 @@ const ProductEditScreen = () => {
                     {loadingBannerImgTwo && <Loader/>}
 
                     <Form.Group controlId='titlebannerthree'>
-                        <Form.Label>Title Banner three</Form.Label>
+                        <Form.Label>Title Banner Three</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter title banner three'
@@ -403,7 +426,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
 
                     <Form.Group controlId='desbannerthree'>
-                        <Form.Label>Description Banner three</Form.Label>
+                        <Form.Label>Description Banner Three</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter description banner three'
@@ -414,7 +437,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
 
                     <Form.Group controlId='bannerimgthree'>
-                        <Form.Label>bannerimg three</Form.Label>
+                        <Form.Label>Image Banner Three</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter bannerimg three url'
@@ -430,7 +453,7 @@ const ProductEditScreen = () => {
                     {loadingBannerImgThree && <Loader/>}
 
                     <Form.Group controlId='specifications'>
-                        <Form.Label>Specifications</Form.Label>
+                        <Form.Label>Specification title</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter specifications'
@@ -441,7 +464,7 @@ const ProductEditScreen = () => {
                     </Form.Group>
 
                     <Form.Group controlId='detailspecifications'>
-                        <Form.Label>Detailspecifications</Form.Label>
+                        <Form.Label>Specification Description</Form.Label>
                         <Form.Control
                         type='text'
                         placeholder='Enter detailspecifications'
@@ -497,19 +520,8 @@ const ProductEditScreen = () => {
                         </Form.Control>
                     </Form.Group>
 
-                    <Form.Group controlId='cetegory'>
-                        <Form.Label>Category</Form.Label>
-                        <Form.Control
-                        type='text'
-                        placeholder='Enter cetegory'
-                        value={category}
-                        onChange={(e)=>setCategory(e.target.value)}
-                        >
-                        </Form.Control>
-                    </Form.Group>
-
                     <Form.Group controlId='countinstock'>
-                        <Form.Label>CountInStock</Form.Label>
+                        <Form.Label>Count In Stock</Form.Label>
                         <Form.Control
                         type='number'
                         placeholder='Enter countInStock'
@@ -519,18 +531,6 @@ const ProductEditScreen = () => {
                         </Form.Control>
                     </Form.Group>
 
-
-                    
-                    <Form.Group controlId='description'>
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
-                        type='text'
-                        placeholder='Enter description'
-                        value={description}
-                        onChange={(e)=>setDescription(e.target.value)}
-                        >
-                        </Form.Control>
-                    </Form.Group>
                     <Button style={{ backgroundColor: "#1967D2"}} type='submit' value='primary' className='my-2'>Update</Button>
                 </Form>
             )
