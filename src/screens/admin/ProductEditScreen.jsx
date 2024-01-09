@@ -23,6 +23,8 @@ const ProductEditScreen = () => {
     const [name,setName]=useState('');
     const [price,setPrice]=useState(0);
     const [image,setImage]=useState('');
+    const [imagetwo,setImagetwo]=useState('');
+    const [imagethree,setImagethree]=useState('');
     const [brand,setBrand]=useState('');
     const [titlebanner,setTitlebanner]=useState('');
     const [desbanner,setDesbanner]=useState('');
@@ -64,6 +66,8 @@ const ProductEditScreen = () => {
            setName(product.name);
            setPrice(product.price);
            setImage(product.image);
+           setImagetwo(product.imagetwo);
+           setImagethree(product.imagethree);
            setBrand(product.brand);
            setTitlebanner(product.titlebanner);
            setDesbanner(product.desbanner);
@@ -93,6 +97,8 @@ const ProductEditScreen = () => {
             name,
             price,
             image,
+            imagetwo,
+            imagethree,
             titlebanner,
             desbanner,
             bannerimg,
@@ -228,6 +234,33 @@ const ProductEditScreen = () => {
                         ></Form.Control>
                     </Form.Group>
                     {loadingUpload && <Loader/>}
+
+                    <Form.Group controlId='imageTwo'>
+                        <Form.Label>Image Two</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter image Two url'
+                        value={imagetwo}
+                        onChange={(e)=>setImagetwo}
+                        ></Form.Control>
+
+                        
+                    </Form.Group>
+                 
+
+
+                    <Form.Group controlId='imageThree'>
+                        <Form.Label>Image Three</Form.Label>
+                        <Form.Control
+                        type='text'
+                        placeholder='Enter image Three url'
+                        value={imagethree}
+                        onChange={(e)=>setImagethree}
+                        ></Form.Control>
+
+                     
+                    </Form.Group>
+                    
 
 
                     <Form.Group controlId='brand'>
