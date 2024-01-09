@@ -53,7 +53,7 @@ const ProductEditScreen = () => {
 
     const [uploadBannerImageTwo,{isLoading:loadingBannerImgTwo}] =useUploadBannerImageTwoMutation();
 
-    const [uploadBannerImageThree,{isLoading:loadingBannerImgThree}] =useUpdateProductMutation();
+    const [uploadBannerImageThree,{isLoading:loadingBannerImgThree}] =useUploadBannerImageThreeMutation();
 
 
 
@@ -347,7 +347,13 @@ const ProductEditScreen = () => {
                         value={bannerimgthree}
                         onChange={(e)=>setBannerimgthree}
                         ></Form.Control>
+                    <Form.Control
+                        type='file'
+                        label='Choose file'
+                        onChange={uploadBannerThreeFileHandler}
+                        ></Form.Control>
                     </Form.Group>
+                    {loadingBannerImgThree && <Loader/>}
 
                     <Form.Group controlId='specifications'>
                         <Form.Label>Specifications</Form.Label>
