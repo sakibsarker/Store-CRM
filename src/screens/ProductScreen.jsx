@@ -108,7 +108,7 @@ const ProductScreen = () => {
       style={{
         position: 'sticky',
         top: 0,
-        zIndex: 1000,
+        zIndex: 2,
         backgroundColor: '#FFFFFF',
         borderBottom: isSticky ? '.5px solid black' : 'none',
         transition: 'background-color 0.3s, border-bottom 0.3s',
