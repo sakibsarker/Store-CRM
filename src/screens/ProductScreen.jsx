@@ -9,6 +9,7 @@ import {
   Card,
   Button,
   Form,
+  Carousel,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
 import {
@@ -23,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from "../components/Meta";
+
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -143,6 +145,47 @@ const ProductScreen = () => {
           <Meta title={products.name} />
           <Row>
             <Col md={8}>
+            <Carousel >
+                <Carousel.Item>
+                  <Image
+                    style={{
+                      height: "700px",
+                      width: "800px",
+                      objectFit: "cover",
+                      borderRadius: "30px",
+                    }}
+                    src={`http://localhost:5000${products.image}`}
+                    alt={products.name}
+                    fluid
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Image
+                    style={{
+                      height: "700px",
+                      width: "800px",
+                      objectFit: "cover",
+                      borderRadius: "30px",
+                    }}
+                    src={`http://localhost:5000${products.imagetwo}`}
+                    alt={products.name}
+                    fluid
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Image
+                    style={{
+                      height: "700px",
+                      width: "800px",
+                      objectFit: "cover",
+                      borderRadius: "30px",
+                    }}
+                    src={`http://localhost:5000${products.imagethree}`}
+                    alt={products.name}
+                    fluid
+                  />
+                </Carousel.Item>
+              </Carousel>
               <Image
                 style={{
                   height: "700px",
