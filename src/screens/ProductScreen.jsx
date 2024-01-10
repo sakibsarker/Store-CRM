@@ -145,8 +145,8 @@ const ProductScreen = () => {
           <Meta title={products.name} />
           <Row>
             <Col md={8}>
-            <Carousel >
-                <Carousel.Item>
+            <Carousel style={{width:"800px",backgroundColor:"gray"}}>
+                <Carousel.Item >
                   <Image
                     style={{
                       height: "700px",
@@ -186,7 +186,8 @@ const ProductScreen = () => {
                   />
                 </Carousel.Item>
               </Carousel>
-              <Image
+
+              {/* <Image
                 style={{
                   height: "700px",
                   width: "800px",
@@ -196,8 +197,8 @@ const ProductScreen = () => {
                 src={`http://localhost:5000${products.image}`}
                 alt={products.name}
                 fluid
-              />
-              {/* <Image src={products.image} alt={products.image} fluid/> */}
+              /> */}
+             
             </Col>
             <Col md={4}>
               <ListGroup variant="flush">
