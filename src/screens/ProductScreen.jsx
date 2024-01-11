@@ -145,7 +145,7 @@ const ProductScreen = () => {
           <Meta title={products.name} />
           <Row>
             <Col md={8}>
-            <Carousel style={{width:"800px",backgroundColor:"gray"}}>
+            <Carousel style={{width:"800px",backgroundColor:"#F4F4F4",borderRadius:'30px'}}>
                 <Carousel.Item >
                   <Image
                     style={{
