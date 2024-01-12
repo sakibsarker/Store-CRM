@@ -54,7 +54,7 @@ const HomeScreen = () => {
             </span>
             <br />
             <span style={{ color: "#188038", fontWeight: "700" }}>
-              the Store CRM
+              the Alveus RM
             </span>
           </h1>
         </Row>
