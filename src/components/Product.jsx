@@ -54,8 +54,8 @@ const Product = ({ prduct }) => {
           {userInfo && `$ ${prduct.price}`}
         </Card.Text>
       </Card.Body>
-      {isHovered && <div style={{textAlign:'center'}}>
-        <Button style={{backgroundColor:'#000000',height:'40px',alignItems:'center',display:'inline-flex',marginLeft:'-5px'}} onClick={handleAddToCart}>Add to cart</Button>
+      {isHovered && <div style={{textAlign:'center',marginLeft:'-5px'}}>
+        <Button disabled={prduct.countInStock === 0} className="product-btn-add-to-cart" onClick={handleAddToCart}>Add to cart</Button>
       </div>
      }
     </div>

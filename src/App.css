@@ -1,0 +1,11 @@
+.product-btn-add-to-cart{
+    background-color: #000000;
+    height: 40px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.product-btn-add-to-cart:hover {
+    background-color: #699CE2;
+    border: 0;
+  }
