@@ -3,12 +3,13 @@ import { Card, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "./Rating";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaCheck } from "react-icons/fa";
 import { addToCart } from "../slices/cartSlice";
 
 const Product = ({ prduct }) => {
   const { userInfo } = useSelector((state) => state.auth);
   const [isHovered, setIsHovered] = useState(false);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ const Product = ({ prduct }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart({ ...prduct, qty: 1 }));
+    setIsAddedToCart(true);
   };
 
   return (
@@ -54,10 +56,16 @@ const Product = ({ prduct }) => {
           {userInfo && `$ ${prduct.price}`}
         </Card.Text>
       </Card.Body>
-      <div style={{textAlign:'center',marginLeft:'-5px'}}>
-        <Button disabled={prduct.countInStock === 0} className="product-btn-add-to-cart" onClick={handleAddToCart}>Add to cart</Button>
+      <div style={{ textAlign: 'center', marginLeft: '-5px' }}>
+        <Button
+          disabled={prduct.countInStock === 0 || isAddedToCart}
+          className="product-btn-add-to-cart"
+          onClick={handleAddToCart}
+        >
+          {isAddedToCart ? <FaCheck /> : <FaShoppingCart style={{marginRight:'5px'}}/>}
+          Add to cart
+        </Button>
       </div>
-     
     </div>
   );
 };
