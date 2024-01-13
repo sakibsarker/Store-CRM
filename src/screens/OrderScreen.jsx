@@ -148,7 +148,7 @@ const OrderScreen = () => {
                 <Col>$ {order.totalPrice}</Col>
               </Row>
             </ListGroup.Item>
-            {!order.isPaid && userInfo.isAdmin && (
+            {!order.isPaid && order.isDelivered && userInfo.isAdmin && (
                 <ListGroup.Item>
                   {loadingPay && <Loader/>}
                 
@@ -161,7 +161,7 @@ const OrderScreen = () => {
             }
 
            {loadingDeliver && <Loader/>}
-           {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered &&(
+           {userInfo && userInfo.isAdmin && !order.isPaid && !order.isDelivered &&(
             <ListGroup.Item>
               <Button type='button' style={{ backgroundColor: "#1967D2"}} className='btn btn-block' onClick={deliverOrderHandler}>
                 Make as Delivered

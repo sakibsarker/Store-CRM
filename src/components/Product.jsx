@@ -54,10 +54,10 @@ const Product = ({ prduct }) => {
           {userInfo && `$ ${prduct.price}`}
         </Card.Text>
       </Card.Body>
-      {isHovered && <div style={{textAlign:'center',marginLeft:'-5px'}}>
+      <div style={{textAlign:'center',marginLeft:'-5px'}}>
         <Button disabled={prduct.countInStock === 0} className="product-btn-add-to-cart" onClick={handleAddToCart}>Add to cart</Button>
       </div>
-     }
+     
     </div>
   );
 };
