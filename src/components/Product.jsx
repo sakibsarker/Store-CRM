@@ -38,7 +38,7 @@ const Product = ({ prduct }) => {
             width: "250px",
             objectFit: "cover",
           }}
-          src={`http://localhost:5000${prduct.image}`}
+          src={`${prduct.image}`}
           variant="top"
         />
       </Link>

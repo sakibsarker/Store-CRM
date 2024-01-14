@@ -74,7 +74,7 @@ const PlaceorderScreen = () => {
                   width: "100px",
                   objectFit: "cover",
                   borderRadius: "30px",
-                }} src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded/>
+                }} src={` ${item.image}`} alt={item.name} fluid rounded/>
                     </Col>
                     <Col>
                     <Link to={`/product/${item._id}`}>

@@ -107,7 +107,7 @@ const OrderScreen = () => {
               <ListGroup.Item key={index}> 
               <Row>
                 <Col md={2}>
-                  <Image src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded/>
+                  <Image src={` ${item.image}`} alt={item.name} fluid rounded/>
                 </Col>
                 <Col>
                 <Link to={`/product/${item.product}`}>

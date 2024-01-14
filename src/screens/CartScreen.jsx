@@ -42,7 +42,7 @@ const CartScreen = () => {
                   width: "100px",
                   objectFit: "cover",
                   borderRadius: "30px",
-                }} src={`http://localhost:5000${item.image}`} alt={item.name} fluid rounded />
+                }} src={` ${item.image}`} alt={item.name} fluid rounded />
               </Col>
               <Col md={3}><Link to={`/product/${item._id}`}>{item.name}</Link></Col>
               <Col md={2}>{userInfo && `$ ${item.price}`}</Col>

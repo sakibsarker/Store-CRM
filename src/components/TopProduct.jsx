@@ -23,7 +23,7 @@ const TopProduct = () => {
           <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
             <div style={{ backgroundColor: '#F8F9FA', borderRadius: '25px', padding: '15px', textAlign: 'start', height: '500px' }}>
               <Image
-                src={`http://localhost:5000${product.image}`}
+                src={` ${product.image}`}
                 alt={product.name}
                 fluid
                 style={{

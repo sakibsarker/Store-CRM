@@ -154,7 +154,7 @@ const ProductScreen = () => {
                       objectFit: "cover",
                       borderRadius: "30px",
                     }}
-                    src={`http://localhost:5000${products.image}`}
+                    src={`${products.image}`}
                     alt={products.name}
                     fluid
                   />
@@ -167,7 +167,7 @@ const ProductScreen = () => {
                       objectFit: "cover",
                       borderRadius: "30px",
                     }}
-                    src={`http://localhost:5000${products.imagetwo}`}
+                    src={`${products.imagetwo}`}
                     alt={products.name}
                     fluid
                   />
@@ -180,7 +180,7 @@ const ProductScreen = () => {
                       objectFit: "cover",
                       borderRadius: "30px",
                     }}
-                    src={`http://localhost:5000${products.imagethree}`}
+                    src={`${products.imagethree}`}
                     alt={products.name}
                     fluid
                   />
@@ -194,7 +194,7 @@ const ProductScreen = () => {
                   objectFit: "cover",
                   borderRadius: "30px",
                 }}
-                src={`http://localhost:5000${products.image}`}
+                src={` ${products.image}`}
                 alt={products.name}
                 fluid
               /> */}
@@ -300,7 +300,7 @@ const ProductScreen = () => {
                     objectFit: "cover",
                     borderRadius: "30px",
                   }}
-                  src={`http://localhost:5000${products.bannerimg}`}
+                  src={`${products.bannerimg}`}
                   alt={products.bannerimgthree}
                   fluid
                 />
@@ -352,7 +352,7 @@ const ProductScreen = () => {
                       width: "100%",
                       objectFit: "cover",
                     }}
-                    src={`http://localhost:5000${products.bannerimgtwo}`}
+                    src={`${products.bannerimgtwo}`}
                     alt={products.bannerimgtwo}
                     fluid
                   />
@@ -403,7 +403,7 @@ const ProductScreen = () => {
                       borderBottomLeftRadius: "30px",
                       borderBottomRightRadius: "30px",
                     }}
-                    src={`http://localhost:5000${products.bannerimgthree}`}
+                    src={` ${products.bannerimgthree}`}
                     alt={products.bannerimgthree}
                     fluid
                   />
